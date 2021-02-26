@@ -41,7 +41,7 @@ trait InteractsWithMedia
 
     public static function bootInteractsWithMedia()
     {
-        static::deleting(function (HasMedia $model) {
+        static::deleting(function ($model) {
             if ($model->shouldDeletePreservingMedia()) {
                 return;
             }
